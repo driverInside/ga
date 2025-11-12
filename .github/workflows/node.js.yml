@@ -6,6 +6,8 @@ on:
     branches:
       - main
 
+env:
+  NODE_VERSION: "lts/*"
 
 jobs:
   init:
@@ -14,3 +16,17 @@ jobs:
     steps:
       - name: event-triggered
         run: echo "This is my first workflow"
+  
+  lint:
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+
