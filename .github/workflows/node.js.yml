@@ -12,5 +12,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name: event-triggered
-        
+      - name: event-triggered
+        run: echo "This is my first workflow"
