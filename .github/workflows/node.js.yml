@@ -1,0 +1,16 @@
+name: NodeJS CI/CD example
+
+# Cada que vez que haga "push" (evento) en la rama main
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+
+    steps:
+      -name: event-triggered
+        run: echo "This is my first github actions workflow"
